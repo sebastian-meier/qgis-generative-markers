@@ -48,6 +48,8 @@ concat('http://localhost:3000/marker/tree/', "count")
 
 Make sure you also set the width and height of the image, in the examples all 150w, 100h and set the unit to pixels.
 
+And to make the shadows look nice, you should order the markers by `y($geometry)` DESC.
+
 The `qgis` folder holds an example project with the dataset.
 
 ## Preview 
