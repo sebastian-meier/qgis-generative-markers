@@ -1,0 +1,29 @@
+{
+  "name": "qgis-generative-markers",
+  "version": "1.0.0",
+  "description": "A simple setup to render custom markers on a NodeJS server and then displaying them as Point-Symbols on a QGIS map.",
+  "main": "index.js",
+  "scripts": {
+    "serve": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sebastian-meier/qgis-generative-markers.git"
+  },
+  "keywords": [
+    "qgis",
+    "express",
+    "canvas"
+  ],
+  "author": "sebastian-meier",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/sebastian-meier/qgis-generative-markers/issues"
+  },
+  "homepage": "https://github.com/sebastian-meier/qgis-generative-markers#readme",
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.17.2",
+    "skia-canvas": "^0.9.27"
+  }
+}

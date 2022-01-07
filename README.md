@@ -1,2 +1,53 @@
-# qgis-generative-markers
-Moving the marker rendering onto an external nodejs server
+# QGIS: Generative Markers
+
+A simple setup to render custom markers on a NodeJS server and then displaying them as Point-Symbols on a QGIS map.
+
+## Author's comment
+There is probably a way to generate those markers in a QGIS-Python function. But I really don't like QGIS-Python and the documentation is not really helpful. Sorry.
+
+## Setup
+
+```bash
+npm install
+```
+
+## Start the Server
+
+```
+npm run serve
+```
+
+## Adding it to QGIS
+
+So far i have three marker types, but when you look into the marker/*.js files, you can easily see how you could add other markers.
+
+*Make sure the port number matches your setup!*
+
+Tree marker:
+```
+http://localhost:3000/marker/tree/NUMBER
+```
+
+Donut marker (make sure the numbers add up to 100, its a very simple implementation):
+```
+http://localhost:3000/marker/tree/NUMBER,NUMBER,NUMBER
+```
+
+Generative Marker (because its randomly generated, in order to receive the same image for the same object, send a unique SEED, for example @id):
+```
+http://localhost:3000/marker/tree/NUMBER
+```
+
+The `qgis` folder holds an example project with the dataset.
+
+## Preview 
+
+![Trees](preview/trees.png)
+![Donus](preview/donut.png)
+![Generative](preview/generative.png)
+
+## Acknowledgement
+
+The idea to overcome my QGIS-Python incompatibility with an external server came from [Johannes Kröger](https://hannes.enjoys.it/blog/)
+
+The [markers](https://github.com/sebastian-meier/generative_marker) were written ages ago to be used in Leaflet/Mapbox
