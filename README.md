@@ -38,6 +38,16 @@ Generative Marker (because its randomly generated, in order to receive the same 
 http://localhost:3000/marker/tree/NUMBER
 ```
 
+## Style Modifications
+
+When selecting the Raster Image, use the expression editor for the location to enter the url and add data:
+
+```
+concat('http://localhost:3000/marker/tree/', "count")
+```
+
+Make sure you also set the width and height of the image, in the examples all 150w, 100h and set the unit to pixels.
+
 The `qgis` folder holds an example project with the dataset.
 
 ## Preview 
@@ -45,6 +55,14 @@ The `qgis` folder holds an example project with the dataset.
 ![Trees](preview/trees.png)
 ![Donus](preview/donut.png)
 ![Generative](preview/generative.png)
+
+## Loads of markers
+
+If you have hundreds or thousands of markers you might obviously run into trouble. I have already written the express server to launch multiple instances to handle more load. But QGIS is caching all images, so once they are loaded you are fine. If for some reason an image is not properly shown, that is a problem, because QGIS will not request the image again. The easiest solution just add a little something to the URL:
+
+```
+concat('http://localhost:3000/marker/tree/', "count", '?v=1.1')
+```
 
 ## Acknowledgement
 
